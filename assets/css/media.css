@@ -1,0 +1,210 @@
+@media (min-width: 280px){
+    /*-----INICIO: GENERAL-----*/
+    /*--TIPOGRAFÍA--*/
+    .h1 {
+        font-size: 2rem;
+    }
+    /*-----FIN: GENERAL-----*/
+
+    /*-----INICIO: HEADER-----*/
+    /*--REDES SOCIALES--*/
+    .redesSociales{
+        padding-bottom: 1.3rem;
+    }
+    /*-----FIN HEADER-----*/
+
+    /*-----INICIO: CUERPO-----*/
+    /*--SLIDER BANNER--*/
+    .control-flecha {
+        width: 8% !important;
+    }
+
+    .slideBajada {
+        bottom: 18% !important;
+        left: 15% !important;
+        right: 15% !important;
+        width: 70%;
+    }
+
+    .flechaSlider:hover{
+        background-color: rgba(255, 255, 255, 0.493)!important;
+        opacity: .9;
+        transition: .6s;
+    }
+
+    /*--BLOG--*/
+    .blogContenido {
+        top: -8%;
+    }
+
+    .blogWidgets ul li a {
+        text-align: left!important;
+    }
+
+    /*--SINGLE--*/
+    .tituloBlog {
+        right: 0;
+    }
+
+    /*--BANNERS PEQUEÑOS ICONOS--*/
+    .iconoInicio{
+        width: 33%;
+    }
+
+    /*--FORMULARIO COTIZAR--*/
+    /*--SELECCIONAR 1 CUADRO + 2 CUADROS + 3 CUADROS--*/
+    .bannerCotizar {
+        min-height: 400px;
+    }
+
+    select.selectroCantidad {
+        width: 60%;
+    }
+
+    /*--CONTACTO--*/
+    .bannerContacto {
+        min-height: 400px;
+    }
+
+    .column-half, .column-full {
+        margin-left: 15px;
+    }
+    /*-----FIN: CUERPO-----*/
+
+    /*-----INICIO: FOOTER-----*/
+    footer img {
+        width: 70%;
+    }
+
+    footer .widgetsCero {
+        padding: 0!important;
+    }
+
+    h2.widgettitle {
+        padding-bottom: 5px;
+    }
+    
+    a.botonFooter {
+        font-size: .9rem;
+    }
+
+    #menu-redes-sociales, #menu-redes-sociales-1{
+        display: flex;
+        justify-content: center;
+    }
+    /*-----FIN: FOOTER-----*/
+}
+
+@media (min-width: 576px){
+    /*-----INICIO: HEADER-----*/
+    /*--MENÚ--*/
+    .navbar-expand-sm .navbar-nav .nav-link {
+        padding-right: 1rem;
+        padding-left: 1rem;
+    }
+    /*-----FIN: HEADER-----*/
+}
+
+@media only screen and (min-width: 1024px) {
+    /*-----INICIO: GENERAL-----*/
+    /*--TIPOGRAFÍA--*/
+    .h1 {
+        font-size: 2.2rem;
+    }
+    /*-----FIN: GENERAL-----*/
+
+    /*-----INICIO: HEADER-----*/
+    /*--REDES SOCIALES--*/
+    .redesSociales {
+        padding-bottom: 0rem;
+    }
+    /*-----FIN: HEADER-----*/
+
+    /*-----INICIO: CUERPO-----*/
+    /*--SLIDER BANNER--*/
+    .slideBajada {
+        bottom: 33% !important;
+        left: 31% !important;
+        right: 31% !important;
+        width: 38%;
+    }
+
+    .control-flecha {
+        width: 3% !important;
+    }
+
+    .flechaSlider {
+        width: 80px;
+    }
+
+    /*--BLOG--*/
+    .blogContenido {
+        top: 50%;
+    }
+
+	.d-block.d-md-flex {
+		margin: auto!important;
+	}
+
+    #blog article.col-sm-6 {
+        padding: 0;
+    }
+
+	article.col-12.col-sm-6 {
+		max-width: 100%;
+	}
+
+    /*--SINGLE--*/
+    .tituloBlog {
+        right: 25%;
+    }
+
+    /*--BANNERS PEQUEÑOS ICONOS--*/
+    .bannerContenido {
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .bannerCatalogo, .bannerAsesoramiento{
+        min-height: 450px;
+    }
+
+    /*--ICONOS--*/
+    .iconoInicio{
+        width: 80%;
+    }
+
+    /*--COTIZAR--*/
+    .bannerCotizar{
+        min-height: 550px;
+        max-height: 1500px;
+    }
+
+    /*--CONTACTO--*/
+	.column-half{
+		width: 50%;
+	}
+
+    .column-half, .column-full {
+        margin-left: 0px;
+    }
+    /*-----FIN: CUERPO-----*/
+
+    /*-----INICIO: FOOTER-----*/
+    footer .widgetsCero {
+        padding: 0 2rem 0 0!important;
+    }
+
+    footer img {
+        width: 50%;
+    }
+
+    a.botonFooter {
+        font-size: 1rem;
+    }
+
+    #menu-redes-sociales, #menu-redes-sociales-1{
+        float: right;
+    }
+    /*-----FIN: FOOTER-----*/
+}

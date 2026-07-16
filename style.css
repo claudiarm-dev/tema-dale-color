@@ -1,0 +1,535 @@
+/*
+Theme Name: Especial para DaleColor
+Author: Claudia Rivas M.
+Description: Este es un tema que fue diseñado especialmente para el cliente "DaleColor" para uso en Wodpress, 2021.
+Requires at least: 4.9.6
+Requires PHP: 5.7.2
+Version: 1.0
+*/
+
+/*-----INICIO: GENERAL-----*/
+html {
+    scroll-behavior: smooth;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #190039;
+}
+
+a:-webkit-any-link:focus {
+    outline-offset: 0px;
+}
+
+.fa, .fab, .fal, .far, .fas {
+    display: contents;
+}
+
+/*--TIPOGRAFÍA--*/
+.h1, h2, h3, h5, .navbar-light .navbar-nav .nav-link, nav .menu-menu-principal-container ul li a{
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.h1 {
+    color: #19003a;
+    line-height: 2.2rem;
+}
+
+.h2, h5.tituloCotizador {
+    color: #19003a;
+}
+
+h4 p {
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+}
+
+p, footer a, .btn-primary, input, select, label, ol li{
+    font-family: 'Open Sans', sans-serif!important;
+    font-weight: 400;
+    font-size: .9rem;
+    line-height: 1.4rem;
+}
+
+a {
+    color: #fa6c04;
+}
+
+/*--COLUMNAS--*/
+.col{
+    padding: 0!important;
+}
+
+.row, .container-fluid {
+    padding-left: 0px;
+    padding-right: 0;
+    margin: 0;
+}
+
+/*--MENÚ+FOOTER--*/
+ul#menu-menu-principal, ul#menu-menu-principal-1, footer ul li, ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+/*-----FIN: GENERAL-----*/
+
+/*-----INICIO: HEADER-----*/
+/*--LOGO--*/
+a.custom-logo-link img {
+    width: 65%!important;
+    height: auto;
+}
+
+/*--MENÚ--*/
+nav#navigation {
+    box-shadow: 0 0px 38px rgb(0 0 0 / 5%);
+}
+
+.menu-menu-principal-container ul li {
+    font-size: 16px;
+    display: contents;
+}
+
+nav  .menu-menu-principal-container ul li a{
+    border-bottom: .25rem solid transparent;   
+    color: rgb(25 0 57/ 80%)!important; 
+    transition: .6s!important;
+    padding-right: 0!important;
+    padding-left: 0!important;
+    margin: 0 .7rem;
+}
+
+nav  .menu-menu-principal-container ul li a:hover{
+    border-bottom-color: rgb(25 0 57)!important;
+    color: rgb(25 0 57)!important; 
+    transition: .6s!important;  
+}
+
+
+/*--HAMBURGUESA--*/
+.navbar-light .navbar-toggler {
+    color: rgb(255 255 255);
+    border-color: rgb(255 255 255);
+    background-color: rgb(25 0 55);
+    padding: 8px 12px;
+    border-radius: 0;
+}
+
+/*--REDES SOCIALES--*/
+.fab, .far{
+    margin-left: 18px;
+    font-size: 18px;
+    transition: .4s;
+}
+
+a.rrss {
+    background-color: #fa6c04;
+    transition: .6s;
+}
+
+a.rrss:hover {
+    background-color: #110027;
+}
+/*-----FIN HEADER-----*/
+
+
+/*-----INICIO: CUERPO-----*/
+/*--SLIDER BANNER--*/
+#cajaSliderPrincipal{
+    margin-top: 60px;
+}
+
+.slideBajada {
+    background-color: #fff;
+    font-size: 1.3rem;
+    padding: 50px 0;
+}
+
+.slideBajada p{
+    color: #333;
+    font-size: 1rem;
+}
+
+.control-flecha i{
+    font-size:2rem;
+    color:#190038;
+}
+
+.carousel-control-next, .carousel-control-prev {
+    bottom: 20px;
+    opacity: 1;
+}
+
+/*--BOTONES--*/
+.btn-primary {
+    background-color: #fa6c04;
+    border-color: #fa6c04;
+    border-radius: 0;
+    transition: .6s;
+    font-size: 1rem;
+}
+
+.btn-primary:hover {
+    background: #190039;
+    border-color: #190039;
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    background-color: #190039;
+    border-color: #190039;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+    box-shadow: 0 0 0 0 rgb(255 255 255)!important;
+}
+
+/*--BLOG--*/
+.blogImagen img {
+    width: 100%;
+    height: auto;
+}
+
+.blogContenido {
+    position: absolute;
+    margin: 55px;
+}
+
+.blogContenidoSingle h2{
+    color: #190039;
+}
+
+/*--SINGLE--*/
+section.blog-head img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    opacity: 0.5;
+}
+
+.card {
+    border: 1px solid rgb(255 255 255 / 13%);
+    border-radius: 0;
+}
+
+.tituloBlog {
+    position: absolute;
+    top: 18%;
+    width: 100%;
+    color:#110027;
+}
+
+h2.textoContenido {
+    background-color: #ffffff;
+    color: #190039;
+    margin: 0;
+}
+
+.wp-block-image img {
+    height: auto;
+}
+
+.blogContenidoSingle p {
+    padding-bottom: 15px;
+}
+
+.widgetsSingle {
+    box-shadow: 0 0px 38px rgb(0 0 0 / 5%);
+    height: 700px!important;
+}
+
+.widgetsSingle a {
+    color: #212529;
+}
+
+.widgetsSingle a:hover {
+    color: #fa6c04;
+}
+
+.blogContenidoSingle h2.widgettitle, .blogContenidoSingle h3 {
+    color: #190039;
+    margin: 10px 0;
+}
+
+.blogContenidoSingle h3 {
+    padding-bottom: 10px;
+}
+
+.blogSingle iframe {
+    width: 100%;
+    height: 400px;
+}
+
+a.wp-block-button__link {
+    border-radius: 0;
+    background-color: #fa6c04;
+    font-family: 'Open Sans', sans-serif!important;
+    font-weight: 400;
+    font-size: .9rem;
+}
+
+a.wp-block-button__link:hover{
+    background-color: #19003a;
+}
+
+/*--CATEGORY--*/
+.category{
+    display: contents;
+}
+
+.blogImagenCategory img {
+    width: 100%;
+    height: auto;
+}
+
+.blogContenidoCategory p {
+    padding: 0 2rem;
+    font-style: italic;
+}
+
+/*--COTIZAR--*/
+.bannerCotizar{
+    background-image: url(assets/imagenes/banners/banner_cotizador.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*--FORMULARIO COTIZAR--*/
+select, input, textarea{
+    border: 2px solid #333!important;
+    padding: 5px!important;
+    border-radius: 0!important;
+    color: #333;
+}
+
+select.selectroCantidad{
+    width: 43%;
+}
+
+select:hover, input:focus, input:hover, input:active, textarea:hover, textarea:active{
+    border-radius: 0!important;
+    border: 2px solid #fa6c04!important;
+}
+
+:focus {
+    outline: -webkit-focus-ring-color auto 0px;
+    border: 0px solid transparent;
+}
+
+input.medidasCotizar, input.medidasCotizar {
+    width: 11%;
+}
+
+label{
+    color: #333;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.2rem rgb(250 108 4 / 37%);
+}
+
+.invalid-feedback {
+    color: #fa6c04;
+}
+
+.form-control.is-invalid, .was-validated .form-control:invalid{
+    background-image: url(assets/imagenes/iconos/icono_alerta.svg);
+}
+
+/*--NOSOTROS--*/
+.seccionNosotros{
+    background-image: url(assets/imagenes/banners/banner_nosotros.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.jumbotron {
+    background-color: #fff;
+    border-radius: 0;
+}
+
+/*--PAGE--*/
+
+.w-100 {
+    max-width: 100%!important;
+}
+
+.pageContenido h4 {
+    padding: 20px 0;
+}
+
+.wp-block-media-text__media img, .wp-block-media-text__media video {
+    height: auto;
+    margin-top: 20px;
+}
+
+.pageContenido ol{
+    margin-top: 20px;
+}
+
+.pageContenido ol li {
+    padding-bottom: 10px;
+}
+
+/*--CONTACTO--*/
+.bannerContacto{
+    background-image: url(assets/imagenes/banners/banner_contacto.jpg);
+    background-position: left;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 650px;
+    max-height: 1500px;
+}
+
+.contacto {
+    margin-top: 5rem!important;
+}
+
+/*--FORMULARIO DE CONTACTO--*/
+#responsive-form{
+	margin:0 auto;
+    width:100%;
+}
+
+.form-row{
+	width: 100%;
+}
+
+.column-half, .column-full{
+	float: left;
+	position: relative;
+	padding: 0.65rem;
+	width: 100%;
+    font-family: 'Open Sans', sans-serif!important;
+    font-weight: 400;
+    font-size: .9rem;
+}
+.clearfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+input.wpcf7-form-control.wpcf7-text.wpcf7-validates-as-required, select.wpcf7-form-control.wpcf7-select, textarea.wpcf7-form-control.wpcf7-textarea, input.wpcf7-form-control.wpcf7-submit.btn.btn-primary.btn-lg {
+    width: 100%;
+    font-family: 'Open Sans', sans-serif!important;
+    font-weight: 400;
+    font-size: .8rem;
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea {
+    height: 100px;
+}
+
+input.wpcf7-form-control.wpcf7-submit.btn.btn-primary.btn-lg {
+    border: 0!important;
+    padding: 10px 20px!important;
+    font-size: 1rem;
+}
+/*-----FIN: CONTENIDO-----*/
+
+
+/*-----INICIO: FOOTER-----*/
+footer .col-md-3 {
+    padding: 0;
+}
+
+hr {
+    margin: 2rem 0 2.8rem 0!important;
+    border-top: 1px solid rgb(52 34 74);
+}
+
+footer a, footer p {
+    color: #fff;
+    font-weight: 300;
+    line-height: 1.3rem;
+    transition: .6s;
+}
+
+footer a:hover {
+    color: #fa6c04;
+    transition: .6s;
+}
+
+.botonFooter:hover {
+    background-color: #28a745;
+    transition: .6s;
+}
+
+h2.widgettitle {
+    margin-top: -5px;
+    font-size: 1.7rem;
+}
+
+.bg-dark{
+    background-color: #19003a!important;
+}
+
+p.copyright {
+    font-size: 12px;
+    font-weight: 300;
+    margin-bottom: 0rem!important;
+}
+
+.blogWidgets ul li {
+    display: flex;
+    padding-bottom: .3rem
+}
+
+.blogWidgets ul li:before {
+    content: "·";
+    padding-right: 10px;
+}
+
+#menu-redes-sociales li a, #menu-redes-sociales-1 li a{
+    padding: 10px 20px;
+    background-color: #fa6c04;
+    margin-right: 10px;
+    color: #fff;
+    transition: .6s;
+}
+
+#menu-redes-sociales li a:hover, #menu-redes-sociales-1 li a:hover{
+    background-color: #0d001f;
+    transition: .6s;
+}
+
+/*--POPUP--*/
+.modal-content {
+    border-radius: 0!important;
+    border: 1px solid rgba(0,0,0,0);
+}
+
+.close {
+    position: absolute;
+    right: 25px;
+}
+
+/*--SCROLL--*/
+.scrollTop {
+    background-color: #fa6c04;
+    color: #ffffff;
+    width: 45px;
+    height: 45px;
+    bottom: 0;
+    transform: translateY(100%);
+    transition: all .5s ease;
+    margin-right: 1rem!important;
+    transition: .6s;
+    padding-top: 10px;
+}
+
+a.scrollTop:hover{
+    color: #fff;
+    background-color: #19003a;
+}
+  
+.scrollTop.esconder {
+    transform: translateY(0);
+  }
+
+/*-----FIN: FOOTER-----*/
