@@ -105,7 +105,7 @@
     /*-----FIN: HEADER-----*/
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 767px) {
     /*-----INICIO: GENERAL-----*/
     /*--TIPOGRAFÍA--*/
     .h1 {
@@ -123,14 +123,14 @@
     /*-----INICIO: CUERPO-----*/
     /*--SLIDER BANNER--*/
     .slideBajada {
-        bottom: 33% !important;
-        left: 31% !important;
-        right: 31% !important;
+        bottom: 30%!important;
+        left: 31%!important;
+        right: 31%!important;
         width: 38%;
     }
 
     .control-flecha {
-        width: 3% !important;
+        width: 3%!important;
     }
 
     .flechaSlider {
@@ -139,7 +139,7 @@
 
     /*--BLOG--*/
     .blogContenido {
-        top: 50%;
+        top: 40%;
     }
 
 	.d-block.d-md-flex {
@@ -170,18 +170,18 @@
     }
 
     /*--ICONOS--*/
-    .iconoInicio{
+    .iconoInicio {
         width: 80%;
     }
 
     /*--COTIZAR--*/
-    .bannerCotizar{
+    .bannerCotizar {
         min-height: 550px;
         max-height: 1500px;
     }
 
     /*--CONTACTO--*/
-	.column-half{
+	.column-half {
 		width: 50%;
 	}
 
@@ -207,4 +207,27 @@
         float: right;
     }
     /*-----FIN: FOOTER-----*/
+}
+
+@media only screen and (max-width: 1024px) {
+    /*-----INICIO: HEADER-----*/
+	#menu-redes-sociales li a, #menu-redes-sociales-1 li a {
+		padding: 8px 15px;
+	}
+	.menu-menu-principal-container ul li {
+		font-size: 12px;
+	}
+	nav .menu-menu-principal-container ul li a {
+		margin: 0 .4rem;
+	}
+    /*-----FIN: HEADER-----*/
+
+    /*-----INICIO: CUERPO-----*/
+    /*--SLIDER BANNER--*/
+	#sliderPrincipal {
+		margin-top: 50px;
+	}
+    .slideBajada {
+        bottom: 20%!important;
+    }
 }
