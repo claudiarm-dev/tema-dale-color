@@ -32,6 +32,8 @@ El recorrido completo de la página: [docs/pagina-completa.png](docs/pagina-comp
 2. Instalar y activar los plugins Contact Form 7 y SVG Support
 3. Activar el tema desde **Apariencia → Temas**
 
+📄 Para la estructura del tema, qué se administra desde WordPress y notas de mantenimiento, ver la **[documentación técnica](DOCUMENTACION.md)**.
+
 ## Autora
 
 **Claudia Rivas Milla** — diseño y desarrollo
