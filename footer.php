@@ -30,7 +30,7 @@
       
       <div class="row pb-5">
         <div class='col-sm-12 col-md-6'>
-          <p class="copyright pt-1 text-center text-md-left">© 2021 <?php bloginfo("name"); ?>, Chile. Todos los derechos reservados.</p>
+          <p class="copyright pt-1 text-center text-md-left">© 2026 <?php bloginfo("name"); ?>, diseñado por Claudia Rivas Milla. Todos los derechos reservados.</p>
         </div>
         <div class='col-sm-12 col-md-6 mt-4 mt-md-0'>
           <?php wp_nav_menu( array("theme_location" => "menu-redesSocial")); ?>
