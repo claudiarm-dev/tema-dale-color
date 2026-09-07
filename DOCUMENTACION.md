@@ -50,7 +50,7 @@ tema-dale-color/
 
 ## Notas de mantenimiento
 
-- Hay **URLs absolutas a `http://localhost/wpDaleColor/`** en `index.php` (botones «Cotizar ahora» y enlace «contáctanos») y el enlace de WhatsApp usa un número de ejemplo. Si el sitio se publica en otro dominio, reemplazarlas — idealmente por `get_permalink()` / `home_url()`.
+- Los botones «Cotizar ahora» y el enlace «contáctanos» en `index.php` usan `home_url( '/contactanos/' )`, así que apuntan al dominio real donde se instale el tema. El enlace de WhatsApp en `contacto.php` sigue usando un número de ejemplo (ficticio).
 - El slider asume exactamente 2 slides (los indicadores están escritos a mano en `banners.php`).
 - Probado en WordPress 7.0.1 con PHP 8.2; Bootstrap 4.6 y Font Awesome se cargan desde `header.php`/`footer.php`.
 

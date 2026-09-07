@@ -77,7 +77,7 @@ include("banners.php"); ?>
       <div class="col-md-6 py-5 align-self-center">
         <div class="my-4 ml-md-3 pl-md-3 pl-lg-5 text-center text-md-left">
           <span class="h1">No dudes y empieza a <br>darle color a tu hogar!</span>
-          <p class="py-2">Estas a un paso de dar color a tu hogar. Si dudas <a href="http://localhost/wpDaleColor/contactanos/"><b><u>contáctanos.</b></u></b></a></p>
+          <p class="py-2">Estas a un paso de dar color a tu hogar. Si dudas <a href="<?php echo esc_url( home_url( '/contactanos/' ) ); ?>"><b><u>contáctanos.</b></u></b></a></p>
           <h5 class="tituloCotizador">¿Cuántos quieres?</h5>
 
           <!--SELECTOR PARA MOSTRAR-->
@@ -118,7 +118,7 @@ include("banners.php"); ?>
 
           <div class="d-block">
             <button class="py-3 px-4 mr-2 btn btn-primary" type="button" onclick="f2()">¿Cuánto sale?</button>
-            <a id="boton-cotizar" class="py-3 px-4 btn btn-primary" type="button" href="http://localhost/wpDaleColor/contactanos/">Cotizar ahora</a>
+            <a id="boton-cotizar" class="py-3 px-4 btn btn-primary" type="button" href="<?php echo esc_url( home_url( '/contactanos/' ) ); ?>">Cotizar ahora</a>
             <div id="total" class="h2 pt-2"></div>
           </div>
           
@@ -156,7 +156,7 @@ include("banners.php"); ?>
 
           <div class="d-block">
             <button class="py-3 px-4 mr-2 btn btn-primary" type="button" onclick="f3()">¿Cuánto sale?</button>
-            <a id="boton-cotizar" class="py-3 px-4 btn btn-primary" type="button" href="http://localhost/wpDaleColor/contactanos/">Cotizar ahora</a>
+            <a id="boton-cotizar" class="py-3 px-4 btn btn-primary" type="button" href="<?php echo esc_url( home_url( '/contactanos/' ) ); ?>">Cotizar ahora</a>
             <div id="totalDos" class="h2 pt-2"></div>
           </div>
           
@@ -198,7 +198,7 @@ include("banners.php"); ?>
 
           <div class="d-block">
             <button class="py-3 px-4 mr-2 btn btn-primary" type="button" onclick="f4()">¿Cuánto sale?</button>
-            <a id="boton-cotizar" class="py-3 px-4 btn btn-primary" type="button" href="http://localhost/wpDaleColor/contactanos/">Cotizar ahora</a>
+            <a id="boton-cotizar" class="py-3 px-4 btn btn-primary" type="button" href="<?php echo esc_url( home_url( '/contactanos/' ) ); ?>">Cotizar ahora</a>
             <div id="totalTres" class="h2 pt-2"></div>
           </div>
 
