@@ -48,7 +48,11 @@ tema-dale-color/
 - **Popup promocional** (`index.php`, modal `#popupInicio`): la imagen vive en `assets/imagenes/banners/banner_popup_envio_gratis.jpg`; se dispara desde `app.js` al cargar la portada.
 - **Sección servicios** (`index.php`): iconos y textos escritos en el HTML, imágenes en `assets/imagenes/iconos/`.
 - **WhatsApp** (`contacto.php`): el número va en el enlace `api.whatsapp.com/send?phone=...`.
-- **Soporte SVG** (`functions.php`): WordPress bloquea `.svg` por defecto (pueden traer `<script>` o atributos `on*`, un riesgo de XSS). Se habilita el mime-type vía `upload_mimes` / `wp_check_filetype_and_ext`, y cada archivo se sanitiza con `DOMDocument` antes de guardarse: se eliminan `<script>`, `<iframe>`, `<object>`, `<embed>`, `<foreignObject>` y `<link>`, los atributos `on*` (manejadores de eventos) y cualquier `href`/`xlink:href` que no sea una referencia interna (`#id`) o un enlace `http(s)`. Si el SVG no es XML válido, se rechaza la subida.
+- **Soporte SVG** (`functions.php`): WordPress bloquea `.svg` por defecto (pueden traer `<script>` o atributos `on*`, un riesgo de XSS). Se habilita el mime-type vía `upload_mimes` / `wp_check_filetype_and_ext`, y cada archivo se sanitiza con `DOMDocument` antes de guardarse, tanto en la subida normal (`wp_handle_upload_prefilter`) como en la de la API REST y `media_handle_sideload()` (`wp_handle_sideload_prefilter`):
+  - Se eliminan `<script>`, `<iframe>`, `<object>`, `<embed>`, `<foreignObject>` y `<link>` (comparando el nombre local, así que un prefijo como `<s:script>` no los esconde), las animaciones `<set>`/`<animate>` que cambian un `href`, y las instrucciones de procesamiento como `xml-stylesheet`.
+  - Se eliminan los atributos `on*` (manejadores de eventos), `xml:base` y cualquier `href` (con o sin prefijo `xlink:`) que no sea una referencia interna (`#id`) o un enlace `http(s)`.
+  - El DTD interno solo se acepta si declara entidades de texto plano, como las que exporta Illustrator para sus namespaces; esas se expanden y se quita el `DOCTYPE`. Cualquier otra declaración (entidades con marcado, externas o de parámetro) rechaza el archivo, porque el navegador las expandiría al abrirlo.
+  - Si el SVG no es XML válido, se rechaza la subida.
 
 ## Notas de mantenimiento
 

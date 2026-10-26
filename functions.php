@@ -74,33 +74,65 @@ function dalecolor_sanitize_svg_file( $file_path ) {
         return false;
     }
 
-    // Elimina etiquetas que pueden ejecutar código o incrustar otros documentos.
-    // getElementsByTagName() es sensible a mayúsculas en XML, por eso "foreignObject"
-    // va con su grafía exacta del spec de SVG.
-    foreach ( array( 'script', 'foreignObject', 'iframe', 'object', 'embed', 'link' ) as $tag ) {
-        $nodes = $dom->getElementsByTagName( $tag );
-        for ( $i = $nodes->length - 1; $i >= 0; $i-- ) {
-            $node = $nodes->item( $i );
-            $node->parentNode->removeChild( $node );
+    // Un DTD interno puede declarar entidades que el navegador expande al abrir el archivo
+    // (por ejemplo, un <script> escondido que esta limpieza no alcanza a ver). Illustrator
+    // declara ahí sus namespaces como entidades de texto, así que se aceptan solo esas
+    // (sin marcado, referencias ni archivos externos) y se expanden antes de limpiar.
+    if ( $dom->doctype && '' !== trim( (string) $dom->doctype->internalSubset ) ) {
+        $resto = preg_replace( '/<!ENTITY\s+[A-Za-z_][\w.-]*\s+("[^"<&%]*"|\'[^\'<&%]*\')\s*>/', '', $dom->doctype->internalSubset );
+        if ( '' !== trim( $resto ) ) {
+            return false;
+        }
+
+        $dom    = new DOMDocument();
+        $loaded = $dom->loadXML( $content, LIBXML_NONET | LIBXML_NOENT );
+        libxml_clear_errors();
+        if ( ! $loaded ) {
+            return false;
+        }
+    }
+    if ( $dom->doctype ) {
+        $dom->removeChild( $dom->doctype );
+    }
+
+    $xpath = new DOMXPath( $dom );
+
+    // Instrucciones de procesamiento como xml-stylesheet pueden cargar hojas XSLT.
+    foreach ( iterator_to_array( $xpath->query( '//processing-instruction()' ) ) as $node ) {
+        $node->parentNode->removeChild( $node );
+    }
+
+    // Elimina etiquetas que pueden ejecutar código o incrustar otros documentos, y las
+    // animaciones <set>/<animate> que cambian un href (pueden convertirlo en "javascript:").
+    // Se compara el nombre local en minúsculas para cubrir prefijos (s:script) y mayúsculas.
+    $bloqueadas = array( 'script', 'foreignobject', 'iframe', 'object', 'embed', 'link' );
+    foreach ( iterator_to_array( $xpath->query( '//*' ) ) as $element ) {
+        $tag        = strtolower( $element->localName );
+        $anima_href = in_array( $tag, array( 'set', 'animate' ), true )
+            && preg_match( '/(^|:)href$/i', trim( $element->getAttribute( 'attributeName' ) ) );
+
+        if ( in_array( $tag, $bloqueadas, true ) || $anima_href ) {
+            $element->parentNode->removeChild( $element );
         }
     }
 
-    // Elimina manejadores de eventos (onload, onclick, ...) y enlaces peligrosos
-    // (javascript:, data:, vbscript:), dejando solo anclas internas (#id) o http(s).
-    $xpath = new DOMXPath( $dom );
+    // Elimina manejadores de eventos (onload, onclick, ...), xml:base (cambia la URL contra
+    // la que se resuelven los href) y enlaces peligrosos (javascript:, data:, vbscript:),
+    // dejando solo anclas internas (#id) o http(s). El nombre local cubre cualquier prefijo
+    // del namespace xlink.
     foreach ( $xpath->query( '//*' ) as $element ) {
-        foreach ( iterator_to_array( $element->attributes ) as $attr ) {
-            $name = strtolower( $attr->nodeName );
+        foreach ( iterator_to_array( $element->attributes, false ) as $attr ) {
+            $name = strtolower( $attr->localName );
 
-            if ( 0 === strpos( $name, 'on' ) ) {
-                $element->removeAttribute( $attr->nodeName );
+            if ( 0 === strpos( $name, 'on' ) || 'base' === $name ) {
+                $element->removeAttributeNode( $attr );
                 continue;
             }
 
-            if ( in_array( $name, array( 'href', 'xlink:href' ), true ) ) {
+            if ( 'href' === $name ) {
                 $value = strtolower( preg_replace( '/\s+/', '', $attr->nodeValue ) );
                 if ( '' !== $value && '#' !== $value[0] && 0 !== strpos( $value, 'http://' ) && 0 !== strpos( $value, 'https://' ) ) {
-                    $element->removeAttribute( $attr->nodeName );
+                    $element->removeAttributeNode( $attr );
                 }
             }
         }
@@ -123,5 +155,7 @@ function dalecolor_sanitize_svg_upload( $file ) {
     return $file;
 }
 add_filter( 'wp_handle_upload_prefilter', 'dalecolor_sanitize_svg_upload' );
+// La API REST (subida con el archivo en el cuerpo) y media_handle_sideload() usan esta otra vía.
+add_filter( 'wp_handle_sideload_prefilter', 'dalecolor_sanitize_svg_upload' );
 ///FIN: SOPORTE SVG
 ?>

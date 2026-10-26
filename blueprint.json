@@ -20,16 +20,6 @@
       }
     },
     {
-      "step": "installPlugin",
-      "pluginData": {
-        "resource": "wordpress.org/plugins",
-        "slug": "svg-support"
-      },
-      "options": {
-        "activate": true
-      }
-    },
-    {
       "step": "installTheme",
       "themeData": {
         "resource": "git:directory",
