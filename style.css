@@ -19,7 +19,7 @@ a:hover {
 
 /*--FOCO--*/
 /* !important porque Bootstrap quita el outline en .btn, button y los campos de formulario */
-:focus {
+:focus-visible {
     outline: 2px solid #0d6efd!important;
     outline-offset: 2px!important;
 }
@@ -518,7 +518,13 @@ p.copyright {
 }
 
 /*--SCROLL--*/
+/* El contenedor .fixed-bottom ocupa todo el ancho de la pantalla: solo la flecha recibe clics */
+.fixed-bottom {
+    pointer-events: none;
+}
+
 .scrollTop {
+    pointer-events: auto;
     background-color: #fa6c04;
     color: #ffffff;
     width: 45px;
