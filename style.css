@@ -17,8 +17,11 @@ a:hover {
     color: #190039;
 }
 
-a:-webkit-any-link:focus {
-    outline-offset: 0px;
+/*--FOCO--*/
+/* !important porque Bootstrap quita el outline en .btn, button y los campos de formulario */
+:focus {
+    outline: 2px solid #0d6efd!important;
+    outline-offset: 2px!important;
 }
 
 .fa, .fab, .fal, .far, .fas {
@@ -186,6 +189,11 @@ a.rrss:hover {
     box-shadow: 0 0 0 0 rgb(255 255 255)!important;
 }
 
+.btn-primary:focus:not(:hover) {
+    background-color: #fa6c04;
+    border-color: #fa6c04;
+}
+
 /*--BLOG--*/
 .blogImagen img {
     width: 100%;
@@ -309,14 +317,9 @@ select.selectroCantidad{
     width: 43%;
 }
 
-select:hover, input:focus, input:hover, input:active, textarea:hover, textarea:active{
+select:hover, input:hover, input:active, textarea:hover, textarea:active{
     border-radius: 0!important;
     border: 2px solid #fa6c04!important;
-}
-
-:focus {
-    outline: -webkit-focus-ring-color auto 0px;
-    border: 0px solid transparent;
 }
 
 input.medidasCotizar, input.medidasCotizar {
