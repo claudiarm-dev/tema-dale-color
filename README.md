@@ -24,12 +24,13 @@ El recorrido completo de la página: [docs/pagina-completa.png](docs/pagina-comp
 - WordPress (tema a medida, probado en WP 7.0.1 / PHP 8.2)
 - Bootstrap 4.6 (vía CDN)
 - PHP, jQuery y CSS propio
-- Plugins requeridos: [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) y [SVG Support](https://wordpress.org/plugins/svg-support/)
+- Plugin requerido: [Contact Form 7](https://wordpress.org/plugins/contact-form-7/)
+- Soporte de subida de SVG (con sanitización) implementado en `functions.php`, sin depender de un plugin
 
 ## Instalación
 
 1. Copiar esta carpeta en `wp-content/themes/tema-dale-color`
-2. Instalar y activar los plugins Contact Form 7 y SVG Support
+2. Instalar y activar el plugin Contact Form 7
 3. Activar el tema desde **Apariencia → Temas**
 
 📄 Para la estructura del tema, qué se administra desde WordPress y notas de mantenimiento, ver la **[documentación técnica](DOCUMENTACION.md)**.

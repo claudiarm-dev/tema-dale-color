@@ -37,6 +37,7 @@ tema-dale-color/
 | Footer (4 áreas) y sidebar del blog | Apariencia → Widgets |
 | Bloques de blog de la portada | Entradas con categorías **decoracion** y **estilo** (2 más recientes de cada una, con imagen destacada) |
 | Formulario de contacto | Plugin Contact Form 7 — la plantilla Contacto usa el shortcode `[contact-form-7 id="5"]` |
+| Subida de archivos SVG | Ya no requiere plugin — `functions.php` habilita y sanitiza los SVG (ver abajo) |
 
 > **Importante**: la portada muestra el blog solo si existen entradas en las categorías `decoracion` y `estilo`, con imagen destacada asignada (soporte `post-thumbnails`).
 
@@ -47,6 +48,7 @@ tema-dale-color/
 - **Popup promocional** (`index.php`, modal `#popupInicio`): la imagen vive en `assets/imagenes/banners/banner_popup_envio_gratis.jpg`; se dispara desde `app.js` al cargar la portada.
 - **Sección servicios** (`index.php`): iconos y textos escritos en el HTML, imágenes en `assets/imagenes/iconos/`.
 - **WhatsApp** (`contacto.php`): el número va en el enlace `api.whatsapp.com/send?phone=...`.
+- **Soporte SVG** (`functions.php`): WordPress bloquea `.svg` por defecto (pueden traer `<script>` o atributos `on*`, un riesgo de XSS). Se habilita el mime-type vía `upload_mimes` / `wp_check_filetype_and_ext`, y cada archivo se sanitiza con `DOMDocument` antes de guardarse: se eliminan `<script>`, `<iframe>`, `<object>`, `<embed>`, `<foreignObject>` y `<link>`, los atributos `on*` (manejadores de eventos) y cualquier `href`/`xlink:href` que no sea una referencia interna (`#id`) o un enlace `http(s)`. Si el SVG no es XML válido, se rechaza la subida.
 
 ## Notas de mantenimiento
 
