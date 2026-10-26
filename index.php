@@ -36,7 +36,7 @@ include("banners.php"); ?>
     <div class="d-block d-md-flex">
       <div class="col col-md-4 d-block d-md-flex">
           <div class="col col-md-4">
-            <img class="float-md-right mx-auto d-block iconoInicio" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/iconos/icono_cuadro.png" width="80%" height="auto">
+            <img class="float-md-right mx-auto d-block iconoInicio" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/iconos/icono_cuadro.png" width="80%" height="auto" alt="" loading="lazy" decoding="async">
           </div>
           <div class="col col-md-8 mt-4 mx-md-3 text-center text-md-left">
             <h5>Puedes personalizar <br>tu cuadro. Cotiza aquí</h5>
@@ -46,7 +46,7 @@ include("banners.php"); ?>
 
       <div class="col col-md-4 d-block d-md-flex">
         <div class="col col-md-4">
-          <img class="float-md-right mx-auto d-block iconoInicio"  src="<?php echo get_template_directory_uri() ?>/assets/imagenes/iconos/framing_icon.png" width="80%" height="auto">
+          <img class="float-md-right mx-auto d-block iconoInicio"  src="<?php echo get_template_directory_uri() ?>/assets/imagenes/iconos/framing_icon.png" width="80%" height="auto" alt="" loading="lazy" decoding="async">
         </div>
         <div class="col col-md-8 mt-4 mx-md-3 text-center text-md-left">
           <h5>Contamos con una amplia <br>variedad de materiales</h5>
@@ -56,7 +56,7 @@ include("banners.php"); ?>
 
       <div class="col col-md-4 d-block d-md-flex pt-3">
           <div class="col col-md-4">
-            <img class="float-mm-right mx-auto d-block iconoInicio" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/iconos/shipping_icon.png" width="80%" height="auto">
+            <img class="float-mm-right mx-auto d-block iconoInicio" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/iconos/shipping_icon.png" width="80%" height="auto" alt="" loading="lazy" decoding="async">
           </div>
           <div class="col col-md-8 mt-4 mx-md-3 text-center text-md-left">
             <h5>No te pierdas el envío <br>a todo Chile</h5>
@@ -259,7 +259,7 @@ include("banners.php"); ?>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
-              <img src="<?php echo get_template_directory_uri() ?>/assets/imagenes/banners/banner_popup_envio_gratis.jpg" alt="Envío gratis compra superior a $20.000" width="100%" height="auto">
+              <img src="<?php echo get_template_directory_uri() ?>/assets/imagenes/banners/banner_popup_envio_gratis.webp" alt="Envío gratis compra superior a $20.000" width="1000" height="649" class="w-100 h-auto">
         </div>
       </div>
     </div>

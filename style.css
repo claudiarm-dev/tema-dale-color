@@ -309,7 +309,7 @@ a.wp-block-button__link:hover{
 
 /*--COTIZAR--*/
 .bannerCotizar{
-    background-image: url(assets/imagenes/banners/banner_cotizador.jpg);
+    background-image: url(assets/imagenes/banners/banner_cotizador.webp);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -360,7 +360,7 @@ label{
 
 /*--NOSOTROS--*/
 .seccionNosotros{
-    background-image: url(assets/imagenes/banners/banner_nosotros.jpg);
+    background-image: url(assets/imagenes/banners/banner_nosotros.webp);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
@@ -396,7 +396,7 @@ label{
 
 /*--CONTACTO--*/
 .bannerContacto{
-    background-image: url(assets/imagenes/banners/banner_contacto.jpg);
+    background-image: url(assets/imagenes/banners/banner_contacto.webp);
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;

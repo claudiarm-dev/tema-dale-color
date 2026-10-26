@@ -43,9 +43,10 @@ tema-dale-color/
 
 ## Qué está definido en el código
 
-- **Slider** (`banners.php`): imágenes en `assets/imagenes/slider-principal/` (versión desktop y mobile por slide) y textos escritos en el HTML. Para cambiar un slide se editan ahí la imagen y el texto.
+- **Slider** (`banners.php`): imágenes WebP en `assets/imagenes/slider-principal/` (versión desktop de 1905×800 y mobile de 450×507 por slide) y textos escritos en el HTML. Cada slide usa `<picture>`, así que el navegador descarga solo la versión de su ancho. Para cambiar un slide se editan ahí la imagen y el texto.
+- **Estilos y scripts** (`functions.php`, `dalecolor_assets()`): se cargan con `wp_enqueue_style` / `wp_enqueue_script`. Los archivos del tema llevan como versión su fecha de modificación, así el navegador toma los cambios sin vaciar la caché. El tema usa el jQuery de WordPress (al final de la página, sin `jquery-migrate`) con el alias `$` restaurado para `app.js`; Bootstrap 4.6 viene del CDN con SRI y Font Awesome se carga sin bloquear el renderizado. Contact Form 7 solo carga sus archivos en la plantilla Contacto y el script de emojis de WordPress está desactivado.
 - **Cotizador** (`index.php` + `assets/js/app.js`): el selector muestra el bloque de 1, 2 o 3 cuadros; los precios se calculan en las funciones `f2()`, `f3()` y `f4()` de `app.js` — ahí se ajustan los valores.
-- **Popup promocional** (`index.php`, modal `#popupInicio`): la imagen vive en `assets/imagenes/banners/banner_popup_envio_gratis.jpg`; se dispara desde `app.js` al cargar la portada.
+- **Popup promocional** (`index.php`, modal `#popupInicio`): la imagen vive en `assets/imagenes/banners/banner_popup_envio_gratis.webp`; se dispara desde `app.js` al cargar la portada.
 - **Sección servicios** (`index.php`): iconos y textos escritos en el HTML, imágenes en `assets/imagenes/iconos/`.
 - **WhatsApp** (`contacto.php`): el número va en el enlace `api.whatsapp.com/send?phone=...`.
 - **Soporte SVG** (`functions.php`): WordPress bloquea `.svg` por defecto (pueden traer `<script>` o atributos `on*`, un riesgo de XSS). Se habilita el mime-type vía `upload_mimes` / `wp_check_filetype_and_ext`, y cada archivo se sanitiza con `DOMDocument` antes de guardarse, tanto en la subida normal (`wp_handle_upload_prefilter`) como en la de la API REST y `media_handle_sideload()` (`wp_handle_sideload_prefilter`):
@@ -58,7 +59,8 @@ tema-dale-color/
 
 - Los botones «Cotizar ahora» y el enlace «contáctanos» en `index.php` usan `home_url( '/contactanos/' )`, así que apuntan al dominio real donde se instale el tema. El enlace de WhatsApp en `contacto.php` sigue usando un número de ejemplo (ficticio).
 - El slider asume exactamente 2 slides (los indicadores están escritos a mano en `banners.php`).
-- Probado en WordPress 7.0.1 con PHP 8.2; Bootstrap 4.6 y Font Awesome se cargan desde `header.php`/`footer.php`.
+- Probado en WordPress 7.0.1 con PHP 8.2.
+- Las imágenes del diseño están en WebP. Para reemplazar una, conviene exportarla al ancho con que se muestra (los fondos del cotizador y de contacto se ven a media pantalla, así que basta con 1200px).
 
 ## Historia del proyecto
 

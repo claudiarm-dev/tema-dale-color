@@ -36,6 +36,76 @@ $widget5=array("name"=>"Sidebar blog",
               "after_widget"=>"</div>");
 register_sidebar($widget5);
 
+///INICIO: ESTILOS Y SCRIPTS
+// Con wp_enqueue el tema usa el mismo jQuery que WordPress (los widgets de video cargan el suyo
+// y antes quedaban dos) y los archivos propios llevan versión: sin ella el navegador seguía
+// usando la copia en caché después de un cambio.
+function dalecolor_assets() {
+    $uri     = get_template_directory_uri();
+    $version = function ( $archivo ) {
+        return filemtime( get_template_directory() . $archivo );
+    };
+
+    wp_enqueue_style( 'dalecolor-fuentes', 'https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,800;1,400&family=Oswald:wght@300;400;500;600&display=swap', array(), null );
+    wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.6.3/css/all.css', array(), null, 'print' );
+    wp_enqueue_style( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css', array(), null );
+    wp_enqueue_style( 'dalecolor', $uri . '/style.css', array( 'bootstrap' ), $version( '/style.css' ) );
+    wp_enqueue_style( 'dalecolor-media', $uri . '/assets/css/media.css', array( 'dalecolor' ), $version( '/assets/css/media.css' ) );
+
+    wp_enqueue_script( 'bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js', array( 'jquery' ), null, true );
+    wp_enqueue_script( 'dalecolor', $uri . '/assets/js/app.js', array( 'jquery', 'bootstrap' ), $version( '/assets/js/app.js' ), true );
+}
+add_action( 'wp_enqueue_scripts', 'dalecolor_assets' );
+
+// jQuery de WordPress al final de la página y sin jquery-migrate (el tema no lo necesita).
+// WordPress lo carga en modo noConflict, así que se recupera el alias $ que usa app.js.
+function dalecolor_jquery() {
+    $scripts = wp_scripts();
+    $scripts->registered['jquery']->deps = array( 'jquery-core' );
+    $scripts->add_data( 'jquery', 'group', 1 );
+    $scripts->add_data( 'jquery-core', 'group', 1 );
+    wp_add_inline_script( 'jquery-core', 'window.$ = window.jQuery;' );
+}
+add_action( 'wp_enqueue_scripts', 'dalecolor_jquery', 1 );
+
+// Integridad (SRI) de los archivos del CDN. Font Awesome se carga con media="print" y pasa a
+// "all" al terminar: solo trae íconos, así que no bloquea el primer renderizado.
+function dalecolor_estilos_cdn( $tag, $handle, $href ) {
+    $integridad = array(
+        'font-awesome' => 'sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/',
+        'bootstrap'    => 'sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l',
+    );
+    if ( isset( $integridad[ $handle ] ) ) {
+        $tag = str_replace( ' href=', ' integrity="' . $integridad[ $handle ] . '" crossorigin="anonymous" href=', $tag );
+    }
+    if ( 'font-awesome' === $handle ) {
+        $tag  = preg_replace( '/ media=([\'"])print\1/', ' media=$1print$1 onload="this.media=\'all\'"', $tag );
+        $tag .= '<noscript><link rel="stylesheet" href="' . esc_url( $href ) . '"></noscript>' . "\n";
+    }
+    return $tag;
+}
+add_filter( 'style_loader_tag', 'dalecolor_estilos_cdn', 10, 3 );
+
+function dalecolor_scripts_cdn( $tag, $handle ) {
+    if ( 'bootstrap' === $handle ) {
+        $tag = str_replace( ' src=', ' integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous" src=', $tag );
+    }
+    return $tag;
+}
+add_filter( 'script_loader_tag', 'dalecolor_scripts_cdn', 10, 2 );
+
+// Contact Form 7 carga sus archivos solo en la plantilla Contacto, la única con formulario.
+function dalecolor_cf7_solo_en_contacto( $cargar ) {
+    return $cargar && is_page_template( 'contacto.php' );
+}
+add_filter( 'wpcf7_load_js', 'dalecolor_cf7_solo_en_contacto' );
+add_filter( 'wpcf7_load_css', 'dalecolor_cf7_solo_en_contacto' );
+
+// Sin el script de emojis de WordPress: el tema no lo necesita.
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'wp_enqueue_scripts', 'wp_enqueue_emoji_styles' );
+///FIN: ESTILOS Y SCRIPTS
+
 ///INICIO: SOPORTE SVG (reemplaza al plugin "SVG Support")
 // Habilita subir archivos .svg desde la Biblioteca de medios.
 function dalecolor_allow_svg_upload( $mimes ) {

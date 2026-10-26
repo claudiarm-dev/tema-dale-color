@@ -9,8 +9,11 @@
 
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img class="d-sm-block d-none w-100" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-principal-bienvenidos-desktop.jpg" alt="Bienvenido DaleColor">
-        <img class="d-sm-none d-block w-100" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-principal-bienvenidos-mobile.jpg" alt="Bienvenido DaleColor">
+        <!-- Con <picture> se descarga solo la imagen del ancho actual; dos <img> ocultos con d-none se descargan igual -->
+        <picture>
+          <source media="(min-width: 576px)" srcset="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-principal-bienvenidos-desktop.webp" width="1905" height="800">
+          <img class="d-block w-100 h-auto" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-principal-bienvenidos-mobile.webp" width="450" height="507" alt="Bienvenido DaleColor" fetchpriority="high">
+        </picture>
         <div class="carousel-caption slideBajada">
           <span class="h1 px-2">Dale color hoy a tu hogar!</span>
           <p class="pt-2 px-2">Cotiza tu cuadro ensueño y a la medida que quieras.</p>
@@ -19,8 +22,10 @@
       </div>
 
       <div class="carousel-item">
-        <img class="d-sm-block d-none w-100" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-promocion-desktop.jpg" alt="Conoce nuestra historia">
-        <img class="d-sm-none d-block w-100" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-promocion-mobile.jpg" alt="Conoce nuestra historia">
+        <picture>
+          <source media="(min-width: 576px)" srcset="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-promocion-desktop.webp" width="1905" height="800">
+          <img class="d-block w-100 h-auto" src="<?php echo get_template_directory_uri() ?>/assets/imagenes/slider-principal/banner-promocion-mobile.webp" width="450" height="507" alt="Conoce nuestra historia" fetchpriority="low">
+        </picture>
         <div class="carousel-caption slideBajada">
           <span class="h1 px-2">Enmárcalo todo</span>
           <p class="pt-2 px-2"><b><u>Contactános</u></b> y tendrás tu cuadro del sueño.</p>
