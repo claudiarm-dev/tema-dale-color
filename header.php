@@ -20,21 +20,21 @@
     <title><?php bloginfo("name"); ?></title>
 </head>
 <!-------INICIO: HEAD------>
-<nav id="navigation" class="navbar navbar-light bg-white navbar-expand-md fixed-top"> 
+<nav id="navigation" class="navbar navbar-light bg-white navbar-expand-lg fixed-top">
 <!--INICIO: LOGO-->
   <div class="container">
     <?php the_custom_logo(); ?>
 <!--FIN: LOGO-->
 
     <!--INICIO: MENÚ-->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
       <i class="fas fa-bars"></i>
     </button>
-    
-    <div class="collapse navbar-collapse justify-content-end">
+
+    <div id="menuPrincipal" class="collapse navbar-collapse justify-content-end">
       <?php wp_nav_menu( array("theme_location" => "menu-principal")); ?>
 
-      <div class="redesSociales text-center text-center text-md-right">
+      <div class="redesSociales text-center text-lg-right">
         <?php wp_nav_menu( array("theme_location" => "menu-redesSocial")); ?>
       </div>
     </div>

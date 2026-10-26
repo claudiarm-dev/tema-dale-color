@@ -256,7 +256,6 @@ h2.textoContenido {
 
 .widgetsSingle {
     box-shadow: 0 0px 38px rgb(0 0 0 / 5%);
-    height: 700px!important;
 }
 
 .widgetsSingle a {
@@ -335,6 +334,12 @@ select:hover, input:hover, input:active, textarea:hover, textarea:active{
 
 input.medidasCotizar, input.medidasCotizar {
     width: 11%;
+    min-width: 4.5rem;
+}
+
+.opcionCotizar {
+    display: inline-block;
+    white-space: nowrap;
 }
 
 label{

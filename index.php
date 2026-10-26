@@ -76,7 +76,7 @@ include("banners.php"); ?>
       <!--SECCIÓN DEL FORMULARIO-->
       <div class="col-md-6 py-5 align-self-center">
         <div class="my-4 ml-md-3 pl-md-3 pl-lg-5 text-center text-md-left">
-          <span class="h1">No dudes y empieza a <br>darle color a tu hogar!</span>
+          <span class="h1">No dudes y empieza a <br class="d-none d-lg-inline">darle color a tu hogar!</span>
           <p class="py-2">Estas a un paso de dar color a tu hogar. Si dudas <a href="<?php echo esc_url( home_url( '/contactanos/' ) ); ?>"><b><u>contáctanos.</b></u></b></a></p>
           <h5 class="tituloCotizador">¿Cuántos quieres?</h5>
 
@@ -102,18 +102,18 @@ include("banners.php"); ?>
           <div class="my-4">
             <h5 class="tituloCotizador">¿Qué color te tinca?</h5>
             <p style="font-size: 11px;" class="mt-2"><em>Selecciona solamente una*</em></p>
-            <input id="colorBlancas" type="checkbox" name="colorCheckbox" value="blancas"><label class="pl-1 pr-3">Blancas</label>
-            <input id="colorDoradas" type="checkbox" name="colorCheckbox" value="doradas"><label class="pl-1 pr-3">Doradas</label>
-            <input id="colorNegra" type="checkbox" name="colorCheckbox" value="negra"><label class="pl-1 pr-3">Negra</label>
-            <input id="colorPersonalizado" type="checkbox" name="colorCheckbox" value="personalizado"><label class="pl-1 pr-3">Personalizado</label>
+            <span class="opcionCotizar"><input id="colorBlancas" type="checkbox" name="colorCheckbox" value="blancas"><label for="colorBlancas" class="pl-1 pr-3">Blancas</label></span>
+            <span class="opcionCotizar"><input id="colorDoradas" type="checkbox" name="colorCheckbox" value="doradas"><label for="colorDoradas" class="pl-1 pr-3">Doradas</label></span>
+            <span class="opcionCotizar"><input id="colorNegra" type="checkbox" name="colorCheckbox" value="negra"><label for="colorNegra" class="pl-1 pr-3">Negra</label></span>
+            <span class="opcionCotizar"><input id="colorPersonalizado" type="checkbox" name="colorCheckbox" value="personalizado"><label for="colorPersonalizado" class="pl-1 pr-3">Personalizado</label></span>
           </div>
 
           <div class="my-4">
             <h5 class="tituloCotizador">¿Molduras?</h5>
             <p style="font-size: 11px;" class="mt-2"><em>Selecciona solamente una*</em></p>
-            <input id="molAluminio" type="checkbox" name="moldurasCheckbox" value="aluminio"><label class="pl-1 pr-3">Aluminio</label>
-            <input id="molRustica" type="checkbox" name="moldurasCheckbox" value="rusticas"><label class="pl-1 pr-3">Rústicas</label>
-            <input id="molGrecas" type="checkbox" name="moldurasCheckbox" value="grecas"><label class="pl-1 pr-3">Grecas</label>
+            <span class="opcionCotizar"><input id="molAluminio" type="checkbox" name="moldurasCheckbox" value="aluminio"><label for="molAluminio" class="pl-1 pr-3">Aluminio</label></span>
+            <span class="opcionCotizar"><input id="molRustica" type="checkbox" name="moldurasCheckbox" value="rusticas"><label for="molRustica" class="pl-1 pr-3">Rústicas</label></span>
+            <span class="opcionCotizar"><input id="molGrecas" type="checkbox" name="moldurasCheckbox" value="grecas"><label for="molGrecas" class="pl-1 pr-3">Grecas</label></span>
           </div>
 
           <div class="d-block">
@@ -140,18 +140,18 @@ include("banners.php"); ?>
           <div class="my-4">
             <h5 class="tituloCotizador">¿Qué color te tinca?</h5>
             <p style="font-size: 11px;" class="mt-2"><em>Selecciona solamente una*</em></p>
-            <input id="colorBlancas1" type="checkbox" name="colorCheckbox" value="blancas"><label class="pl-1 pr-3">Blancas</label>
-            <input id="colorDoradas1" type="checkbox" name="colorCheckbox" value="doradas"><label class="pl-1 pr-3">Doradas</label>
-            <input id="colorNegra1" type="checkbox" name="colorCheckbox" value="negra"><label class="pl-1 pr-3">Negra</label>
-            <input id="colorPersonalizado1" type="checkbox" name="colorCheckbox" value="personalizado"><label class="pl-1 pr-3">Personalizado</label>
+            <span class="opcionCotizar"><input id="colorBlancas1" type="checkbox" name="colorCheckbox" value="blancas"><label for="colorBlancas1" class="pl-1 pr-3">Blancas</label></span>
+            <span class="opcionCotizar"><input id="colorDoradas1" type="checkbox" name="colorCheckbox" value="doradas"><label for="colorDoradas1" class="pl-1 pr-3">Doradas</label></span>
+            <span class="opcionCotizar"><input id="colorNegra1" type="checkbox" name="colorCheckbox" value="negra"><label for="colorNegra1" class="pl-1 pr-3">Negra</label></span>
+            <span class="opcionCotizar"><input id="colorPersonalizado1" type="checkbox" name="colorCheckbox" value="personalizado"><label for="colorPersonalizado1" class="pl-1 pr-3">Personalizado</label></span>
           </div>
 
           <div class="my-4">
             <h5 class="tituloCotizador">¿Molduras?</h5>
             <p style="font-size: 11px;" class="mt-2"><em>Selecciona solamente una*</em></p>
-            <input id="molAluminio1" type="checkbox" name="moldurasCheckbox" value="aluminio"><label class="pl-1 pr-3">Aluminio</label>
-            <input id="molRustica1" type="checkbox" name="moldurasCheckbox" value="rusticas"><label class="pl-1 pr-3">Rústicas</label>
-            <input id="molGrecas1" type="checkbox" name="moldurasCheckbox" value="grecas"><label class="pl-1 pr-3">Grecas</label>
+            <span class="opcionCotizar"><input id="molAluminio1" type="checkbox" name="moldurasCheckbox" value="aluminio"><label for="molAluminio1" class="pl-1 pr-3">Aluminio</label></span>
+            <span class="opcionCotizar"><input id="molRustica1" type="checkbox" name="moldurasCheckbox" value="rusticas"><label for="molRustica1" class="pl-1 pr-3">Rústicas</label></span>
+            <span class="opcionCotizar"><input id="molGrecas1" type="checkbox" name="moldurasCheckbox" value="grecas"><label for="molGrecas1" class="pl-1 pr-3">Grecas</label></span>
           </div>
 
           <div class="d-block">
@@ -182,18 +182,18 @@ include("banners.php"); ?>
           <div class="my-4">
             <h5 class="tituloCotizador">¿Qué color te tinca?</h5>
             <p style="font-size: 11px;" class="mt-2"><em>Selecciona solamente una*</em></p>
-            <input id="colorBlancas2" type="checkbox" name="colorCheckbox" value="blancas"><label class="pl-1 pr-3">Blancas</label>
-            <input id="colorDoradas2" type="checkbox" name="colorCheckbox" value="doradas"><label class="pl-1 pr-3">Doradas</label>
-            <input id="colorNegra2" type="checkbox" name="colorCheckbox" value="negra"><label class="pl-1 pr-3">Negra</label>
-            <input id="colorPersonalizado2" type="checkbox" name="colorCheckbox" value="personalizado"><label class="pl-1 pr-3">Personalizado</label>
+            <span class="opcionCotizar"><input id="colorBlancas2" type="checkbox" name="colorCheckbox" value="blancas"><label for="colorBlancas2" class="pl-1 pr-3">Blancas</label></span>
+            <span class="opcionCotizar"><input id="colorDoradas2" type="checkbox" name="colorCheckbox" value="doradas"><label for="colorDoradas2" class="pl-1 pr-3">Doradas</label></span>
+            <span class="opcionCotizar"><input id="colorNegra2" type="checkbox" name="colorCheckbox" value="negra"><label for="colorNegra2" class="pl-1 pr-3">Negra</label></span>
+            <span class="opcionCotizar"><input id="colorPersonalizado2" type="checkbox" name="colorCheckbox" value="personalizado"><label for="colorPersonalizado2" class="pl-1 pr-3">Personalizado</label></span>
           </div>
 
           <div class="my-4">
             <h5 class="tituloCotizador">¿Molduras?</h5>
             <p style="font-size: 11px;" class="mt-2"><em>Selecciona solamente una*</em></p>
-            <input id="molAluminio2" type="checkbox" name="moldurasCheckbox" value="aluminio"><label class="pl-1 pr-3">Aluminio</label>
-            <input id="molRustica2" type="checkbox" name="moldurasCheckbox" value="rusticas"><label class="pl-1 pr-3">Rústicas</label>
-            <input id="molGrecas2" type="checkbox" name="moldurasCheckbox" value="grecas"><label class="pl-1 pr-3">Grecas</label>
+            <span class="opcionCotizar"><input id="molAluminio2" type="checkbox" name="moldurasCheckbox" value="aluminio"><label for="molAluminio2" class="pl-1 pr-3">Aluminio</label></span>
+            <span class="opcionCotizar"><input id="molRustica2" type="checkbox" name="moldurasCheckbox" value="rusticas"><label for="molRustica2" class="pl-1 pr-3">Rústicas</label></span>
+            <span class="opcionCotizar"><input id="molGrecas2" type="checkbox" name="moldurasCheckbox" value="grecas"><label for="molGrecas2" class="pl-1 pr-3">Grecas</label></span>
           </div>
 
           <div class="d-block">

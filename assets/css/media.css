@@ -59,6 +59,8 @@
 
     select.selectroCantidad {
         width: 60%;
+        min-width: 16rem;
+        max-width: 100%;
     }
 
     /*--CONTACTO--*/
@@ -159,6 +161,11 @@
         right: 25%;
     }
 
+    .widgetsSingle {
+        min-height: 700px;
+        align-self: flex-start;
+    }
+
     /*--BANNERS PEQUEÑOS ICONOS--*/
     .bannerContenido {
         margin-top: 0;
@@ -230,4 +237,76 @@
     .slideBajada {
         bottom: 20%!important;
     }
+}
+
+@media only screen and (max-width: 991.98px) {
+    /*-----INICIO: HEADER-----*/
+    /*--MENÚ DESPLEGABLE (☰)--*/
+    #menuPrincipal {
+        padding: .5rem 0 1rem;
+        text-align: center;
+    }
+
+    .menu-menu-principal-container ul li {
+        display: block;
+        font-size: 1rem;
+    }
+
+    nav .menu-menu-principal-container ul li a {
+        display: inline-block;
+        margin: 0;
+        padding-top: .6rem;
+        padding-bottom: .6rem;
+    }
+
+    #menu-redes-sociales {
+        float: none;
+        justify-content: center;
+    }
+
+    .redesSociales {
+        padding: .5rem 0 0;
+    }
+    /*-----FIN: HEADER-----*/
+
+    /*-----INICIO: CUERPO-----*/
+    /*--BLOG--*/
+    /* Imagen y caja del título comparten la celda: con títulos largos la tarjeta crece,
+       en vez de que la caja se salga y la sección siguiente tape el botón */
+    #blog article {
+        display: grid;
+    }
+
+    #blog .blogImagen, #blog .blogContenido {
+        grid-area: 1 / 1;
+    }
+
+    #blog .blogContenido {
+        position: relative;
+        top: auto;
+        align-self: center;
+    }
+
+    #blog .blogImagen img {
+        height: 100%;
+        object-fit: cover;
+    }
+    /*-----FIN: CUERPO-----*/
+
+    /*-----INICIO: FOOTER-----*/
+    /*--ENLACES: área táctil de al menos 24px de alto--*/
+    footer ul:not([id^="menu-redes-sociales"]) li a, footer .textwidget a {
+        display: inline-block;
+        padding: .25rem 0;
+    }
+    /*-----FIN: FOOTER-----*/
+}
+
+@media only screen and (max-width: 575.98px) {
+    /*-----INICIO: CUERPO-----*/
+    /*--BLOG--*/
+    #blog .blogContenido {
+        margin: 2rem;
+    }
+    /*-----FIN: CUERPO-----*/
 }
