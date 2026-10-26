@@ -355,6 +355,14 @@ function onlyNumberKey(evt) {
 //*** INICIO: PLANTILLA POP UP ***//
 $( document ).ready(function() {
   $('#popupInicio').modal('toggle')
+
+  // El popup está al final del HTML: sin esto, el siguiente Tab tras cerrarlo salta al footer
+  $('#popupInicio').on('hidden.bs.modal', function () {
+    var nav = document.getElementById('navigation');
+    nav.setAttribute('tabindex', '-1');
+    nav.focus();
+    $(nav).one('blur', function () { nav.removeAttribute('tabindex'); });
+  });
 });
 //*** FIN: PLANTILLA POP UP ***//
 
